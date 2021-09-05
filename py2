@@ -1,0 +1,47 @@
+print("Welcome to the phone book")
+print("How can i help you?")
+print("1- Search by phone number")
+print("2- Search by name")
+print("3 - Add a new person to the phone book")
+print("Warning, you must write the number of the service you want!!!")
+s = input("Answer:")
+names = ["Amal","Mohammed","Khadijah","Abdullah","Rawan","Faisal","Layla"]
+phone_numbers = ["1111111111","2222222222","3333333333","4444444444","5555555555","6666666666","7777777777"]
+
+if s == "1":
+    search_term = input("Enter the number:")
+
+    if search_term in phone_numbers:
+        index = phone_numbers.index(search_term)
+        name = names[index]
+        print("Name: " + name + " Phone Number: " + search_term)
+    else:
+        print("Sorry, the number is not found")
+
+
+elif s == "2":
+    search_term = input("Enter the name:")
+
+    if search_term in names:
+        index = names.index(search_term)
+        phone_number = phone_numbers[index]
+        print("Name: "+search_term+" Phone Number: "+phone_number)
+    else:
+        print("Sorry, the name is not found")
+
+
+
+elif s == "3":
+    name = input("Name: ")
+    phone_number = input("Phone Number: ")
+
+    names.append(name)
+    phone_numbers.append(phone_number)
+    print("\nName\t\t\tPhone Number\n")
+    print(names, phone_numbers)
+
+   
+
+else:
+    print('This is invalid number')
+
